@@ -115,26 +115,20 @@ export default function Header() {
               className="block px-4 py-2 rounded-lg hover:bg-muted transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              الرئيسية
             </Link>
             <Link
               href="/anime"
               className="block px-4 py-2 rounded-lg hover:bg-muted transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Browse
+              قائمة الإنمي
             </Link>
-            <Link
-              href="/trending"
-              className="block px-4 py-2 rounded-lg hover:bg-muted transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Trending
-            </Link>
-            <form onSubmit={handleSearch} className="px-4 py-2 flex gap-2">
+            
+            <form dir="rtl" onSubmit={handleSearch} className="px-4 py-2 flex gap-2">
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="بحث..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1 px-3 py-2 rounded-lg bg-muted border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"

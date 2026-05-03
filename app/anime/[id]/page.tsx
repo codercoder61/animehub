@@ -215,9 +215,6 @@ const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
               {anime.episodes.map((episode,index) => (
                 <button
                   key={episode.id}
-                  onClick={() => {
-                    
-                  }}
                   onClick={() => {if (selectedEpisode) {
                       document.getElementById('player')?.scrollIntoView({ behavior: 'smooth' });
                     } ;setSelectedEpisode(episode)}}
@@ -241,7 +238,7 @@ const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
           </section>
 
          
-        </div>
+        </div></div></div>
       </main>
 
       <Footer />

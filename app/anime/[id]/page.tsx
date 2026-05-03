@@ -66,7 +66,7 @@ useEffect(() => {
 
     const fetchAnime = async () => {
       const res = await axios.get(
-        `http://localhost:3001/api/animes/${id}`
+        `https://witanime-production.up.railway.app/api/animes/${id}`
       );
 
       setAnime(res.data);

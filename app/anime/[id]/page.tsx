@@ -80,7 +80,7 @@ export default function AnimeDetailPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
-      <main style={{ marginTop: '150px' }} className="flex-1">
+      <main style={{ marginTop: '50px' }} className="flex-1">
         <div className="container mx-auto px-4">
           <div style={{ direction: 'rtl' }} className="flex flex-col md:flex-row gap-8 mb-12">
             

@@ -29,7 +29,7 @@ export default function EpisodePlayer({ episode }: Props) {
   
       const fetchAnime = async () => {
         try {
-          const res = await axios.get(`http://localhost:3001/api/episodes/${episode.id}/servers`);
+          const res = await axios.get(`https://witanime-production.up.railway.app/api/episodes/${episode.id}/servers`);
           setServers(res.data)
           setSelectedServer(res.data[0])
         } catch (err) {

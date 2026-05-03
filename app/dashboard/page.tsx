@@ -137,7 +137,7 @@ export default function DashboardPage() {
                 <div className="p-3 rounded-lg bg-accent/20">
                   <Heart className="w-6 h-6 text-accent" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Your Favorites</h2>
+                <h2 className="text-3xl font-bold text-foreground">المفضلة لديك</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
                 {favoritedAnime.map((anime) => (

@@ -162,44 +162,42 @@ const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
               </div>
 
               {/* Actions */}
-              <div className="flex gap-3 pt-4">
-                <button
-                  onClick={() => {
-                    if (selectedEpisode) {
-                      document.getElementById('player')?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  <Play className="w-5 h-5" />
-                  شاهد الآن
-                </button>
-                <button
-                  onClick={() => {
-                    toggleFavorite(anime.anime.id);
-                    setIsFavorited(!isFavorited);
-                  }}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors border ${
-                    isFavorited
-                      ? 'bg-accent/20 border-accent text-accent'
-                      : 'border-border/50 text-foreground hover:border-primary/50'
-                  }`}
-                >
-                  <Heart className={`w-5 h-5 ${isFavorited ? 'fill-current' : ''}`} />
-                  {isFavorited ? 'مفضل' : 'أضف إلى قائمة الأنمي المفضلة'}
-                </button>
-                <button
-                  onClick={sendEmail}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors border
-                      border-border/50 text-foreground hover:border-primary/50
-                  `}
-                >
-                  <Flag className={`w-5 h-5 fill-current`} />
-                  أبلغ عن عدم توفر الخوادم
-                </button>
-              </div>
-            </div>
-          </div>
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+  <button
+    onClick={() => {
+      if (selectedEpisode) {
+        document.getElementById('player')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }}
+    className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors"
+  >
+    <Play className="w-5 h-5" />
+    شاهد الآن
+  </button>
+
+  <button
+    onClick={() => {
+      toggleFavorite(anime.anime.id);
+      setIsFavorited(!isFavorited);
+    }}
+    className={`w-full sm:w-auto flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors border ${
+      isFavorited
+        ? 'bg-accent/20 border-accent text-accent'
+        : 'border-border/50 text-foreground hover:border-primary/50'
+    }`}
+  >
+    <Heart className={`w-5 h-5 ${isFavorited ? 'fill-current' : ''}`} />
+    {isFavorited ? 'مفضل' : 'أضف إلى قائمة الأنمي المفضلة'}
+  </button>
+
+  <button
+    onClick={sendEmail}
+    className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors border border-border/50 text-foreground hover:border-primary/50"
+  >
+    <Flag className="w-5 h-5 fill-current" />
+    أبلغ عن عدم توفر الخوادم
+  </button>
+</div>
 
           {/* Player Section */}
           {selectedEpisode && (

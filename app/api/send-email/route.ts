@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -11,7 +11,9 @@ export async function POST(req: Request) {
         pass: process.env.EMAIL_PASS, // app password (not your real password)
       },
     });
-
+    const name = "AnimeHub"
+    const email = process.env.EMAIL_USER  
+    
     const mailOptions = {
       from: email,
       to: process.env.EMAIL_USER,
